@@ -22,10 +22,11 @@
   <body>
   <%= render 'shared/navbar' %>
 
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-   
-    <%= yield %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
 
        <!-- jQuery library -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
