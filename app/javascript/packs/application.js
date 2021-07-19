@@ -14,5 +14,6 @@ ActiveStorage.start()
 
 import "../styles/application.scss";
 import "jquery";
+import "jquery_ujs";
 import "popper.js";
 import "bootstrap";
