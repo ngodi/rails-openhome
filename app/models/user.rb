@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :rooms
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,

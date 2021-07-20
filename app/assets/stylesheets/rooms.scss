@@ -1,51 +1,6 @@
-@import "~bootstrap/scss/bootstrap.scss";
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Open sans', serif;
-}
-.step-1{
-    z-index: 1;
-}
-
-.image-small{
-    width: 30px;
-    border-radius: 50%;
-}
-.border-none{
-    border: none;
-    outline: none;
-    background: none;
-    color: white;
-}
-
-.navbar {
-    margin-bottom: 100px;
-}
-
-.new-property{
-    background-image: linear-gradient(0deg, rgba(0, 255, 136, 0.446), rgba(0, 255, 136, 0.446)), url('../../assets/images/new_property_back.jpg');
-    background-position: center;
-    background-size: cover;
-    min-height: 100vh;
-    padding: 100px 50px;
-}
-.text-field{
-   margin: 10px 0;
-}
-
-.input-field{
-    width: 100%;
-    outline: none;
-    border:none;
-    border-radius: 7px;
-    padding: 2px 5px;
-
-    &:focus{
-        border-bottom: 2px solid gray;
-    }
-}
-
+// Place all the styles related to the Rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
 label {
     color: #565a5c;
     font-size: 1.1em;

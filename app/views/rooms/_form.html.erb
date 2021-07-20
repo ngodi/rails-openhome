@@ -1,0 +1,103 @@
+
+<div class="row">
+   <div class="col-md-6 bg-light p-4">
+     <h2 class="mb-4">Add new property</h2>
+     <%= form_for @room do |f| %>
+        <div class="text-field form-group">
+            <%= f.text_field :listing_name, placeholder: "Enter listing title", class: "input-field form-control" %>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group select">
+            <label>Home Type</label>
+               <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "house"], ["Furnised", "Furnished"]],
+               id: "home_type", prompt: "Select...", class: "form-control" %>
+            </div>
+
+            <div class="col-md-6 form-group select">
+            <label>Room Type</label>
+               <%= f.select :room_type, [["Entire", "Entire"], ["Private", "Private"], ["Shared", "Shared"]],
+                prompt: "Select...", class: "form-control" %>
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="col-md-4 select">
+               <div class="form-group">
+                  <label>Accommodate</label>
+               <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6+", 6]],
+                prompt: "Select...", class: "form-control" %>
+               </div>
+            </div>
+
+            <div class="col-md-4 form-group select">
+            <label>Bedrooms</label>
+               <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+                prompt: "Select...", class: "form-control" %>
+            </div>
+            <div class="col-md-4 form-group select">
+            <label>Bathrooms</label>
+               <%= f.select :bath_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
+                prompt: "Select...", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+               <label>Summary</label>
+               <%= f.text_area :summary, rows: 5, placeholder: "Enter description of house", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+               <label>Address</label>
+               <%= f.text_field :address, placeholder: "Enter house address", class: "form-control" %>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+              
+               <div class="form-group">
+                  <%= f.check_box :is_kitchen %> Kitchen
+               </div>
+               <div class="form-group">
+                  <%= f.check_box :is_tv %> TV
+               </div>
+                <div class="form-group">
+                  <%= f.check_box :is_internet %> Internet
+               </div>
+            </div>
+
+            <div class="col-md-4">
+             
+               <div class="form-group">
+                  <%= f.check_box :is_air %> Air Conditioning
+               </div>
+                <div class="form-group">
+                  <%= f.check_box :is_heating %> Heating
+               </div>
+            </div>
+        </div>
+
+        <div class="row">
+           <div class="col-md-4">
+               <div class="form-group">
+                  <label>Nightly Price</label>
+                  <div class="input-group">
+                     <div class="input-group-addon">$</div>
+                     <%= f.text_field :price, placeholder: "e.g $100", class: "form-control"%>
+                  </div>
+            </div>
+           </div>
+        </div>
+
+        <div class="row">
+           <div class="form-group">
+              <%= f.check_box :active %> Active
+           </div>
+        </div>
+        <%= f.submit "Save", class: "btn btn-primary btn-block" %>
+     <% end %>
+    </div>
+</div>
