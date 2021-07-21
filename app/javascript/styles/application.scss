@@ -12,6 +12,9 @@
     width: 30px;
     border-radius: 50%;
 }
+.image-medium {
+    height: 200px;
+}
 .border-none{
     border: none;
     outline: none;
@@ -128,4 +131,48 @@ a{
 
 .card-heading.preview img {
     width: 100%;
+}
+
+.sidebar-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.sidebar-item {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #82888a;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+
+    color: #cacccd;
+    text-decoration: none;
+}
+
+.active.sidebar-link {
+    color: #565a5c;
+    font-weight: bold;
+    text-decoration: none;
+}
+.avatar-large {
+    width: 100%;
+}
+
+.card-heading.preview {
+    padding: 0;
+}
+
+.card-heading.preview img {
+    width: 100%;
+}
+
+.amenities li {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.text-line-through {
+    text-decoration: line-through;
 }
