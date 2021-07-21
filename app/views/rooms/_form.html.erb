@@ -1,8 +1,9 @@
 
 <div class="row">
-   <div class="col-md-6 bg-light p-4">
+   <div class="col-md-8 p-4">
+   <%= render 'shared/errors', resource: @room %>
      <h2 class="mb-4">Add new property</h2>
-     <%= form_for @room do |f| %>
+     <%= form_for(@room, :html => { :multipart => true })do |f| %>
         <div class="text-field form-group">
             <%= f.text_field :listing_name, placeholder: "Enter listing title", class: "input-field form-control" %>
         </div>
@@ -97,7 +98,24 @@
               <%= f.check_box :active %> Active
            </div>
         </div>
-        <%= f.submit "Save", class: "btn btn-primary btn-block" %>
+
+         <div class="row">
+           <div class="col-md-4">
+              <div class="form-group">
+                <div class="btn btn-default btn-file">
+                    <i class="fa fa-upload fa-lg"></i>Upload Images
+                    <%= f.file_field :images, multiple: true %>
+                </div>
+              </div>
+           </div>
+        </div>
+        <%= render 'images/list'%>
+         <% if @room.new_record? %>
+              <%= f.submit "Preview", class: "btn btn-primary btn-block" %>
+            <% else %>
+              <%= f.submit "Confirm", class: "btn btn-primary btn-block" %>
+         <% end %>
+        
      <% end %>
     </div>
 </div>

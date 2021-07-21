@@ -1,0 +1,13 @@
+<% if @images %>
+  <div class="row">
+      <% (0...@images.count).each do |index| %>
+        <div class="col-md-4">
+           <div class="card card-default">
+              <div class="card-heading preview">
+                 <%= image_tag @room.thumb_nail(index) %>
+              </div>
+           </div>
+        </div>
+      <% end %>
+  </div>
+<% end %>
