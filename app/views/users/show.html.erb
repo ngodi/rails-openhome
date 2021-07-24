@@ -1,16 +1,35 @@
 <div class="row">
-  <div class="col-md-4 p-2">
-    <h2>Personal Profile</h2>
-    <div class="bg-info text-center mb-2">
-       <%= image_tag avatar_url(@user), width: "80%", class: "rounded-circle" %>
+  <div class="col-md-3">
+    <div class="center">
+       <%= image_tag avatar_url(@user), width: "80%", class: "avatar-full" %>
     </div>
-    <span class="py-2"><strong>Name:</strong><%= @user.fullname%></span><hr>
-    <span class="py-2"><strong>Email:</strong><%= @user.email%></span><hr>
-    <span class="py-2"><strong>Phone:</strong><%= @user.phone%></span><hr>
-    <%= button_tag "My Listings", class: "btn btn-primary mb-3" %><br>
-    <%= button_tag "My Bookings", class: "btn btn-primary mb-3" %><br>
-    <%= link_to "Update My Profile", edit_user_registration_path(current_user.id), class: "btn btn-primary mb-3" %><br>
+    <div class="card card-default">
+      <div class="card-heading">Verification</div>
+      <div class="card-body">
+        Email: <br>
+        Phone: <br>
+      </div>
+    </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
+    <h2><%= @user.fullname %></h2>
+    <div class="description row-space-3">
+      <%= @user.description %>
+    </div>
+    <h4>Listings (<%= @rooms.length %>)</h4><br>
+    <div class="row">
+        <% @rooms.each do |room| %>
+            <div class="col-md-4">
+              <div class="card card-default">
+                  <div class="card-heading preview">
+                      <%= image_tag room.images[0] %>
+                  </div>
+                  <div class="card-body">
+                      <%= link_to room.listing_name %>
+                  </div>
+              </div>
+            </div>
+        <% end %>
+    </div>
   </div>
 </div>

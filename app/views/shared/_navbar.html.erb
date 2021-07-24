@@ -11,19 +11,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><%= link_to "Home", root_path %></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <% if signed_in? %>
+              <% if signed_in? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                <%= image_tag avatar_url(current_user), class: "image-small", width: "30px" %>
                 <%= current_user.fullname.split[0] %>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Profile", user_path(current_user.id)%></li>
+                <li><%= link_to "Your Listings", rooms_path %></li>
+                <li><%= link_to "Your Reservations", your_reservations_path %></li>
+                <li><%= link_to "Your Trips", your_trips_path %></li>
+                <li><%= link_to "Wishlist", ""%></li>                
                 <li><%= link_to "Edit Profile", edit_user_registration_path(current_user.id)%></li>
                 <li role="separator" class="divider"></li>
+                <li><%= link_to "Account Setting", user_path(current_user.id)%></li>
                 <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
@@ -32,6 +33,8 @@
                 <%= link_to "Login", new_user_session_path %>
               </li>
             <% end %>
+            <li class="nav-item"> <%= link_to '<i class="fas fa-envelope"></i>&nbsp;Message'.html_safe, "#" %></li>
+            <li class="nav-item"> <%= link_to '<i class="fas fa-home"></i>&nbsp;Become a Host'.html_safe, "#" %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
