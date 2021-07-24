@@ -10,11 +10,11 @@
             <div class="card-heading">My Listings</div>
             <div class="card-body">
                 <% @rooms.each do |room| %>
-                    <div class="row my-2">
+                    <div class="row">
                        <div class="col-md-3"><%= image_tag room.images[0] , width: "100%", alt: "Listing Photo", class: "image-medium" %></div>
-                       <div class="col-md-6"><h4><%= room.listing_name %></h4></div>
+                       <div class="col-md-6"><h4><%= link_to room.listing_name, room_path(room) %></h4></div>
                        <div class="col-md-3 right"><%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %></div>
-                    </div><br>
+                    </div><hr>
                 <% end %>
             </div>
         </div>
