@@ -2,6 +2,12 @@
   <div class="col-md-3">
     <div class="center">
        <%= image_tag avatar_url(@user), width: "80%", class: "avatar-full" %>
+       <br><br>
+       <% if @user != current_user %>
+          <div>
+            <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), class: "btn btn-primary", method: 'post' %>
+          </div>
+       <% end %>
     </div>
     <div class="card card-default">
       <div class="card-heading">Verification</div>

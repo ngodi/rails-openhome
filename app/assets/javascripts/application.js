@@ -16,5 +16,6 @@
 //  https://github.com/rails/jquery-rails
 //= require jquery
 //= require jquery-ui
+//= require private_pub
 //= require bootstrap-sprockets
 //= require_tree .

@@ -1,5 +1,5 @@
-<div class="card card-default">
-    <div class="card-body">
+<div class="panel panel-default">
+    <div class="panel-body">
         <div class="row">
             <div class="col-md-12">
                 <%= image_tag @images[0], width: "100%", height: "600px", class: "img-responsive" %>
@@ -130,9 +130,9 @@
                 <h3 class="text-center">Nearby Listings</h3>
                <% if @room.nearbys %>
                    <% for room in @room.nearbys(10) %>
-                    <div class="car card-default">
-                        <div class="card-heading"><%= link_to room.listing_name, room_path(room) %></div>
-                        <div class="card-body">
+                    <div class="car panel-default">
+                        <div class="panel-heading"><%= link_to room.listing_name, room_path(room) %></div>
+                        <div class="panel-body">
                            <h5> (<%= room.distance.round(2) %>  miles away)</h5>
                            <%= image_tag room.images[0] , width: "250px", height: "250px" %>
                         </div>

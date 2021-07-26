@@ -7,9 +7,9 @@
        </ul>
     </div>
     <div class="col-md-9">
-        <div class="card card-default">
-            <div class="card-heading">My Listings</div>
-            <div class="card-body">
+        <div class="panel panel-default">
+            <div class="panel-heading">My Listings</div>
+            <div class="panel-body">
                 <% @rooms.each do |room| %>
                     <div class="row">
                        <div class="col-md-3"><%= image_tag room.images[0] , width: "100%", alt: "Listing Photo", class: "image-medium" %></div>

@@ -28,6 +28,8 @@ gem 'mini_magick'
 gem 'geocoder'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'private_pub'
+gem 'thin'
 gem 'jquery-ui-rails'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'

@@ -209,3 +209,15 @@ a{
     padding: 10px;
     margin-bottom: 10px;
 }
+
+// conversations
+
+.conversation {
+    color: #7f7f7f;
+    padding: 10px;
+}
+
+.conversation:hover, .conversation:focus {
+    background-color: #f4f4f5;
+}
+
