@@ -2,11 +2,11 @@ class CreateReviews < ActiveRecord::Migration[6.1]
   def change
     create_table :reviews do |t|
       t.text :comment
-      t.integer :star
-      t.references :room, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.integer :star, default: 1
+      t.references :room, index: true, foreign_key: true
+      t.references :user, index: true, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

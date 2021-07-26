@@ -22,4 +22,8 @@ get "/your_reservations" => "reservations#your_reservations"
     resources :messages, only: [:index, :create]
   end
 
+  resources :rooms do
+    resources :reviews, only: [:create, :destroy]
+  end
+
 end
