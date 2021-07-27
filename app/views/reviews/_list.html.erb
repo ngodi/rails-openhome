@@ -5,10 +5,10 @@
     <% @reviews.order("id desc").each do |r| %>
         <hr>
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <%= image_tag avatar_url(r.user), class: "img-circle image-medium" %>
             </div>
-            <div class="col-md-11">
+            <div class="col-md-10">
                 <div>
                     <strong><%= r.user.fullname %> <div id="stars_<%= r.id %>"</div> </strong>
                     <span class="pull-right">
