@@ -311,5 +311,5 @@ Devise.setup do |config|
 
   config.allow_unconfirmed_access_for = 365.days
 
-  config.omniauth :facebook, "511258773467006", "0045867f0554eb97c77da0180584bfd0"
+  config.omniauth :facebook, Rails.application.credentials.facebook[:APP_ID], Rails.application.credentials.facebook[:APP_SECRET]
 end

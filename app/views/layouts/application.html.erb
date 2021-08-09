@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NextLodging | Book Your Next Home With Us</title>
+    <title>Open Homes | Book Your Next Home With Us</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,11 +16,21 @@
 
   <body>
     <%= render "shared/messages" %>
-    <%= render 'shared/navbar' %>
+    <% if current_page?(root_path) %>
+      <div class="header row">
+          <div class="col-md-10 col-md-offset-1">
+              <%= render 'shared/navbar' %>
+              <h1 class="text-center">Searching for the<br> Best Places?</h1>
+              <%= render 'shared/search-form' %>
+          </div>
+      </div>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
-    <div class="container">
+    <div class="container main-content">
       <%= yield %>
     </div>
-
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -1,6 +1,41 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-  </div>
-</div>
+
+<br><br>
+<div class="row">
+  <% @rooms.each do |room| %>
+    <div class="col-md-4", style="height: 200">
+     <%= link_to room do %>
+      <div class="panel panel-default">
+        <div class="panel-heading preview">
+          <%= image_tag room.images[0], width: "100%", height: "300px" if room.images.length > 0%>
+        </div>
+        <div class="panel-body">
+          <%= room.listing_name %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>  
+
+<script>
+  $(function() {
+    $("#start_date").datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '3m',
+      onSelect: function(selected) {
+        $('#end_date').datepicker("option", "minDate", selected);
+        $('#end_date').attr('disabled', false);
+      }
+    });
+
+    $("#end_date").datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '3m',
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "maxDate", selected);
+  }
+});
+  })
+</script>

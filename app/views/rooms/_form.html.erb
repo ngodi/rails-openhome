@@ -109,12 +109,10 @@
               </div>
            </div>
         </div>
-        <%= render 'images/list'%>
-         <% if @room.new_record? %>
-              <%= f.submit "Preview", class: "btn btn-primary btn-block" %>
-            <% else %>
-              <%= f.submit "Confirm", class: "btn btn-primary btn-block" %>
-         <% end %>
+         <div id="photos">
+           <%= render 'photos/list'%>
+       </div>
+     <%= f.submit "Confirm", class: "btn btn-primary btn-block" %>
         
      <% end %>
     </div>

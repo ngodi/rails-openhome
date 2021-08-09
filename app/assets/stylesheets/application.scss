@@ -26,7 +26,9 @@
 .step-1{
     z-index: 1;
 }
-
+.main-content{
+    min-height: 100vh;
+}
 .image-small{
     width: 30px;
     border-radius: 50%;
@@ -43,7 +45,8 @@
 }
 
 .navbar {
-    margin-bottom: 100px;
+    background: transparent;
+    color: white !important;
 }
 
 .new-property{
@@ -119,7 +122,7 @@ input[type="checkbox"]:checked:before {
     width: 1.25em;
     color: #ff5a5f;
 }
-a{
+a, a:hover {
     text-decoration: none;
     color:#565a5c;
 }
@@ -145,6 +148,17 @@ a{
     display: block;
 }
 
+.images-preview{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-item{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
 .card-heading.preview {
     padding: 0;
 }
@@ -221,3 +235,53 @@ a{
     background-color: #f4f4f5;
 }
 
+#wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+
+#sidebar {
+    float: right;
+    width: 340px;
+}
+
+#sidebar #widget {
+    width: 340px;
+    height: 540px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#article {
+    width: 560px;
+    float: left;
+}
+
+.footer{
+
+    background: #000;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white; 
+    width: 100vw;
+}
+
+.header {
+    width: 100vw;
+    min-height: 70vh;
+    background-image: url("https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    h1{
+        color: white !important;
+        font-size: 5em;
+        font-weight: bold;
+    }
+}
+.search-form{
+    margin-top: 100px;
+ }

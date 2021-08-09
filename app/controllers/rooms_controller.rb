@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @images = @room.images
+   @images = @room.images
     @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present? if current_user
 
     @reviews = @room.reviews
@@ -22,9 +22,7 @@ class RoomsController < ApplicationController
     @room = current_user.rooms.build(room_params)
     if @room.save
       if params[:images]
-        params[:images].each do |image|
-          @room.images.create(image: image)
-        end
+        @room.images.attach(params[:images])
       end
       @images = @room.images
       redirect_to edit_room_path(@room)
@@ -44,15 +42,14 @@ class RoomsController < ApplicationController
   def update
     if @room.update(room_params)
       if params[:images]
-        params[:images].each do |image|
-          @room.images.create(image: image)
-        end
+        @room.images.attach(params[:images])
       end
       redirect_to edit_room_path(@room), notice: "Updated..."
     else
       render :edit
     end
   end
+ 
 
   private 
 
@@ -61,6 +58,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :active, :is_air, :is_heating, :is_internet, :price, images:[])
+    params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :active, :is_air, :is_heating, :is_internet, :price, images: [])
   end
 end

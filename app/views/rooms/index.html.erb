@@ -12,7 +12,7 @@
             <div class="panel-body">
                 <% @rooms.each do |room| %>
                     <div class="row">
-                       <div class="col-md-3"><%= image_tag room.images[0] , width: "100%", alt: "Listing Photo", class: "image-medium" %></div>
+                       <div class="col-md-3"><%= image_tag room.images[0], width: "100%", alt: "Listing Photo", class: "image-medium" if room.images.length > 0 %></div>
                        <div class="col-md-6"><h4><%= link_to room.listing_name, room_path(room) %></h4></div>
                        <div class="col-md-3 right"><%= link_to "Update", edit_room_path(room), class: "btn btn-primary" %></div>
                     </div><hr>
