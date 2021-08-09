@@ -1,1 +1,2 @@
 # OpenHomes
+![homepage](homepage.png)
